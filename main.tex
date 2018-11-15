@@ -1,0 +1,772 @@
+\documentclass[norsk]{article}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{parskip}
+\usepackage[norsk]{babel}
+\usepackage{booktabs}
+
+\begin{document}
+\title{Skipsprosjektet
+\author{Gruppe 17}}
+\date{13.10.2018}
+
+
+ 
+ 
+\begin{center}
+{\Large \textbf{Forord}}
+\end{center}
+
+
+Som mange ferske marinstudenter før oss, fikk vi som førsteklassinger på Marin Teknikk i oppgave å skrive en rapport som omhandlet skip og prosjektering. Hensikten med denne rapporten var at vi skulle skaffe oss en grunnleggende forståelse for maritime prosjekter og prosjektering ved å gjennomføre et omfattende skipsprosjekt. Det innebar at vi måtte lære så mye som mulig om faget dette første semesteret, men også at vi skulle anvende kunnskapen vår til relevant bruk i praktisk prosjektering. Prosjektet var stort, og krevde mye koordinasjon og samarbeid innad i gruppa. \\
+
+Vi vil gjerne takke dem som har hjulpet og/eller veiledet oss gjennom prosjektet, da tenker vi spesielt på studassene og undassen Simen. Også vårt tidligere medlem Bendik Nilsen Bergendal fortjener en stor takk, som med sine kunnskaper og sitt tegnetalent veiledet og hjalp resten av gruppa mye gjennom de første ukene av skipsprosjektet. \\
+
+Som nevnt sluttet et av våre viktigste medlemmer, Bendik, noe som føltes som et solid slag i tinningen. Han var en av dem i gruppa som helt klart kunne mest om skip, og derfor alltid kunne hjelpe resten. Vi kom oss på beina etter hvert og hadde flere sene kvelder der vi satt på MTS og arbeidet med prosjektet. 
+
+\textit{\\*Stian Sølvberg \\* Edvard Ronglan \\* Sara Heiberg \\* Anna-Louise Wangen \\* Christopher Janjua} \pagebreak 
+
+
+
+{\Large \textbf{Sammendrag} }\\
+	
+	I denne rapporten har vi planlagt og regnet for å finne et passelig designet skip og en god rute i forhold til oppdraget vi har fått. Oppdraget går forøvrig ut på å transportere maling fra Torshavn til Trondheim. Vi har regnet på størrelsen til skipet og forholdene til skipet for at det skal kunne transportere tilstrekkelig med maling. I tillegg til antall regnet vi antall leveringer per måned og fart som krevdes for å fullføre oppdraget innen gitt tidsrom. \\
+
+Før vi kom skikkelig i gang med prosjektet måtte vi altså komme med en problemstilling eller et klart mål for hvordan vi ville utvikle skipet og prosjektet. Vi diskuterte i gruppa og kom fram til at det vi ville ha fokus på i dette prosjektet var økonomi. Altså ønsket vi å lage et mest mulig økonomisk givende skip og en gunstig logistisk plan for transporten. Det var blant annet dette vi brukte til å komme fram til antall leveringer og dimensjonene på skipet, samt farten det skulle holde. Økonomi er med andre ord et begrep vi har hatt i bakhodet under hele prosjektarbeidet og noe vi har tatt i sterk betraktning ved alle større avgjørelser de siste ukene.\\
+
+Som man kan lese om i resultatdelen av rapporten kom vi fram til at skipet måtte være 77 meter langt og 11,5 meter bredt, i tillegg til en dybde på 5,6 meter.  For at vi skulle kunne transportere nok maling og holde oss innenfor betingelsene som var gitt til oss fant vi ut at vi måtte bruke minst to skip for å kunne gjennomføre. Disse kom vi fram til at burde levere maling til Trondheim i snitt 3,5 (til sammen 7)  ganger i måneden for å optimalt tilfredsstille problemstillingen og målsetningen vår. \\
+
+
+{\Large \textbf{Outline Specification} }\\
+
+\textbf{Sett inn tabell her} \\
+
+\tableofcontents 
+\section{Tabelliste} 
+\textbf{Sett inn tabelliste} 
+
+\section{Figurliste} 
+\listoffigures
+\newpage
+
+\section{Symbolliste} 
+
+\begin{table}[h!]
+    \caption{Symbolliste}
+    \label{tab:table1}
+    \begin{tabular}{l|l} 
+      \textbf{} & \textbf{}\\
+      \hline
+      $A_c$ & Admiralitetskoeffisient [-]\\
+      $L_pp$ & Lengde mellom perpendikulærene\\ 
+      $A_m$ & Midtspantareal [$m^2$]\\
+      SAK & Seksjonsarealkurve [-]\\
+      AP & Aktre Perpendikulær\\ 
+      FP & Fremre Perpendikulær \\
+      Avl & Vannlinjeareal [$m^2$] \\ 
+      $L_vl$ &  Lengde i konstruksjonsvannlinjen [$m$]\\
+      B & Bredde [$m$]\\ 
+      $C_B$ & Blokk-koeffisient [-]\\
+      BkW/Bkh & Bremseeffekt [-] \\
+      $C_M$ & Midtspantkoeffisient [-] \\
+      V & Fart/hastighet \\
+      T & Dypgang  [m]\\
+      $D_R$ & Dybde i riss\\
+      VL & Vannlinje [-]\\
+      Dwt & Dødvekt [tonn]\\
+      Wsk & Skrogvekt [tonn]\\
+      Wls & Lettskipsvekt [tonn]\\
+      Wma & Maskinerivekt [tonn]\\
+      $\nabla$ & Volumdeplasement [$m^3$]\\ 
+      $\vec{\Delta}$ & Vektdeplasement [tonn]\\
+      KG & Avstand fra kjøl til tyngdepunkt  [$m$]\\ 
+      KVL & Konstruksjonsvannlinje\\
+      $L_oa$ & Lengde over alt [m]\\
+      LCB & Langskips oppdriftssenter\\
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\section{Formelliste}
+ 
+\begin{table}[htbp]
+    \caption{Formelliste}
+    \label{tab:table2}
+    \hskip-3.0cm\begin{tabular}{l|l} 
+      \hline
+      Formel 1: Ligning for seilingstid per rundtur &  Formel 26:  			  Vektdeplasement\\
+      Formel 2: Ligning for tidsforbruket i et år & Formel 27: Langskipsplassering av oppdriftssenter\\ 
+      Formel 3: Total laste og lossetid & Formel 28: Virtuell hevning av massesenteret\\
+      Formel 4: Ligning for antall rundturer & Formel 29: Arealtreghetsmoment for oljetank\\
+      Formel 5: Utregning av admiralitetskoeffisient &  Formel 30: Arealtreghetsmoment for ferskvannstank\\ 
+      Formel 6: Paller per rundtur & Formel 31: GM ved ballasttilstand\\
+      Formel 7: Påkrevd palleareal &  Formel 31: GM ved ballasttilstand\\ 
+      Formel 8: Påkrevd lasteareal & Formel 32: Formel for slankhetstall\\
+      Formel 9: Estimert vektdeplasement & Formel 33: ITTC-formelen\\ 
+      Formel 10: Vektdeplasment til volumdeplasement i saltvann & Formel 34: Beregning av Reynolds-tall\\
+      Formel 11: Froudes tall & Formel 35: Korreksjon for bredde/dypgang-forhold\\
+      Formel 12: Beregning av dypgang & Formel 36: Formel for dimensjonsløs totalmotstand\\
+      Formel 13: Overslagsberegning av motorytelse & Formel 37: Formel for totalmostand\\
+      Formel 14: Energibehov & Formel 38: Vannets hastighet inn i propellen\\
+      Formel 15: Drivstoffbehov & Formel 39: Slepeeffekten\\
+      Formel 16: Beregning av skrogvekt & Formel 40: Bp-formelen\\
+      Formel 17: Motorvekt & Formel 41: $\delta$-formelen \\
+      Formel 18: Beregning av maskinerivekt & Formel 42: Optimal propelldiameter\\
+      Formel 19: Beregning av utrustningsvekt & Formel 43: Propellklaringer\\
+      Formel 20: Blokkoeffisient & Formel 44: Formel for turtall\\
+      Formel 21: TP-satsen & Formel 45: Beregning av Thrust\\
+      Formel 22: Beregning av tyngdepunkt for last & Formel 46: Beregning av totalmotstand\\
+      Formel 23: Beregning av BM & Formel 47: Motorytelse\\
+      Formel 24: Beregning av GM & Formel 48: Totalvirkningsgraden\\ 
+      Formel 25: Formel for arealtreghetsmoment & Formel 49: Beregning av hjelp-maskineriet\\
+      & Formel 50: Realrenten i nåverdi\\ 
+      & Formel 51: Nødvendig årlig inntekt F\\
+      & Formel 52: Nødvending fraktrate RFR\\       
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\section{Innledning} 
+De aller fleste har sikkert vært om bord i et skip før, enten det er å feriere på cruiseskip, være på fisketur, seiltur, eller ta fergen fra et sted til et annet. Du tar det kanskje som en selvfølge at skipet skal ta deg trygt fra havn til havn, men bak et godt konstruert skip ligger det ofte lang og krevende planlegging. Hva som definerer er godt skip er ikke lett å si, da det finnes et bredt spekter av bruksområder. Frakt og transport av folk og varer, fangst, fornøyelse, forskning og service er bare noen få av alle de utallige funksjonene et skip kan ha. Med andre ord har skip og båter gjennom alle tider vært et svært viktig transportmiddel for oss mennesker, og det kommer det fortsatt til å være gjennom all fremtid. Dagens globaliserte verden avhenger av transport mellom kontinentene, og dette behovet for transport er det bare skipet som kan dekke. Det finnes så og si ingen begrensninger på hvilke varer et skip kan fraktet - uansett størrelse og antall! \\
+
+I dette prosjektet fikk vi som ferske marinstudenter virkelig kjenne på utfordringene som følger med det å konstruere et bra skip. Denne rapporten vil ta deg med gjennom en prosess der vi har prøvd å skissere et skip som skal kunne frakte lasten trygt og presist fra havn til havn, i tillegg til at det gjerne skal være økonomisk og ta hensyn til miljø. Vi har prøvd og feilet opptil flere ganger, og resultatet ble kanskje ikke helt det vi håpet på. En brattere læringskurve skal du imidlertidig lete lenge etter!\\ 
+
+\section{Bakgrunn}
+	\subsection{Rammebetingelser} 
+
+Investoren “Pr. Å. Fitt” har bestemt seg for å transportere maling fra Færøyene til Norge, mer spesifikt til Trondheim havn. Vi har følgende spesifikasjoner til oppdraget:
+
+\begin{itemize}
+\item Malingen skal transporteres de neste 20 årene, der mengden er på 170 000 tonn per år. Malingen har egenvekt på 2.2 tonn/kubikkmeter
+\item På grunn av lagerkapasiteten i Trondheim må malingen leveres minst 4 ganger i måneden, og 2 uker hvert år skal settes av til verkstedopphold. Disse to ukene gjelder ikke det normale leveringskravet.
+\item Det skal gjøres beregninger på drivstoffutslipp i forhold til frakten og malingen
+\item Slankhetstallet må være minst 4.5
+\item Et fartøy kan ikke være lenger enn 79m i total lengde
+\item Maks dypgang på et fartøy er 6m
+\item Maks hastighet er på 16 knop
+\item Avstanden mellom Trondheim og Torshavn er på 500 nautiske mil
+\end{itemize}
+
+	\subsection{Funksjonskrav}
+
+\section{Problemstilling}
+Med utgangspunkt i rammebetingelsene ønsker vi å tilby en mest mulig økonomisk løsning på oppdraget vi har fått fra arbeidsgiver. Dette vil være vårt hovedfokus når vi tar avgjørelser innen logistikk, skipsdesign og ellers i prosjekteringen. Problemstillingen vår blir derfor å finne ut hvilke dimensjoner, koeffisienter og andre forhold som vil gi den mest økonomiske løsningen. Vil det lønne seg å ha færre overfarter i måneden, dvs. tyngre laster og større båter, eller bør vi øke frekvensen, noe som gir mindre last og lettere båter?
+
+\section{Logistikk: tidsbudsjett og lastekapasitet}
+	\subsection{Utregning Tidsbudsjett}	
+Vi startet med å utvikle et tidsbudsjett. Antall timer venting i havn, antall timer på manøvrering, uforutsette hendelser osv. Se tabell under: \\
+
+\textbf{Sett inn tabell av tidsbudsjett utkast 1 (10.1)} \\
+
+Vi så ut fra disse dataene at vi måtte øke antall båter for å kommer under den oppgitte maksfarten, gitt ved: $$v(m/s)=\sqrt{(0,83(m/s^2)*Loa(m))}=\sqrt{0,83*79}=8,1m/s=15kn$$ Timeplan for 2 båter: \\
+\textbf{Sett inn tabell 10.2} \\
+Hoveddimensjoner med 2 båter: \textbf{Sett inn tabell 10.3} \\
+
+Vi ser at 6,3 knop er en veldig lav fart med tanke på fremkommelighet på sjøen (med tanke på dårlig vær osv.). Samtidig vil det lønne seg å øke farten med tanke på å avgjøre hvilke sammenlikningsskip vi skal velge, siden hvis vi velger skip med en hastighet over minimumshastigheten slipper skipet å gå på maksimal motorytelse hele veien. Vi ville også fått en ugunstig blokk-koeffisient med fart på 6,3 knop, siden den ville blitt veldig høy. Derfor økte vi farta til 10 knop. \\
+
+Med denne økningen i fart fikk vi mye dødtid i havn. Dvs. vi måtte øke frakte-frekvensen. I første omgang satte vi den til 6 leveringer i måneden.
+Denne frekvensen, sammen med lengden på skipet ga oss en blokk-koeffisient på 0,8. Vi ønsket en lavere blokk-koeffisient, noe vi fikk ved å øke antall leveringer i måneden til 7, og kutte lengden av båten til 77 m. \\
+
+Videre brukte vi nødvendig lastekapasitet, samt forhold som var oppgitt i oppgaven, til å gjøre tidlige overslag over hoveddimensjoner. \\
+
+Volumdeplasementet:
+Dødvekten på skipet er beregnet ut ifra forbruksvarer (provianter for turen, bunkers osv.) og mannskap i tillegg til selve lasten. Vi estimerer mannskapet/provianter til 35 tonn og lasten er på 1950 tonn. \\
+
+$dwt=1950tonn+35tonn \approx 2000tonn$ \\
+
+Vi brukte så forholdstallet:\\
+
+\(\frac{dwt}{\nabla}\)$=(Dødvekt/Volumdeplasement) \approx 0,7tonn/m^3$ \\
+
+Dette gir oss volumdeplasementet:\\ 
+
+$\nabla \approx$ \(\frac{dwt}{0,7}\)$=2857m^3$ \\
+
+Dette kan vi bruke. 
+\newline\\
+Verdier til utrekning av tyngdepunkt:\\ \textbf{Sett inn tabell 10.4}
+\newline\\
+Vekt: \\
+\textbf{Tabell 10.5}
+\newline\\ 
+\textbf{Tabell 10.6}
+\newline\\
+\textbf{Tabell 10.7}
+\newline\\
+
+
+	\subsection{Tidsbudsjett for en rundtur}
+	\subsection{Tidsbudsjett for ett år}
+	\subsection{Drøfting av farten}
+
+\section{Sammenligningsskip}
+	\subsection{Estimert admiralitetskoeffisient}
+
+\section{Estimering av hoveddimensjoner}
+	\subsection{Lengde og bredde av skipet}
+	\subsection{Første iterasjon av lastareal}
+	\subsection{Andre iterasjon av lastareal}
+	\subsection{Vektdeplasement og volumdeplasement}
+	\subsection{Dypgang}
+	\subsection{Dybde i riss}
+	\subsection{Sammenligning av hoveddimensjoner}
+	
+\section{Laste- og losse-løsning}
+	\subsection{Drøfting av laste- losse-løsning}
+
+\section{Nøyere beregning av hoveddimensjoner}
+	\subsection{Overslagberegning av motorytelse}
+		\subsubsection{Drøfting av motorytelse}
+	\subsection{Motor}
+ 	\subsection{Beregning av dødvekt}
+  		\subsubsection{Bunkers}
+  		\subsubsection{Smøreolje}
+  		\subsubsection{Mannskapet}
+  		\subsubsection{Vannforbruk}
+  		\subsubsection{Andre forbruksvarer}
+  		\subsubsection{Beregning av dødvekt}
+  	\subsection{Lettskipsvekt}
+  		\subsubsection{Skrogvekt}
+  		Skrogvekten er den totale vekten av alt stålet som inngår i skipets skrog. Det antas at alle hoveddimensjonene til skipet har like mye betydning for 	stålvekten. Stålvektkoeffisient som er brukt for å beregne skrogvekten $K^{12}$ til $0,1$\\
+		
+$W_{sk} = K[tonn/m^3] * L_{oa}[m] * B_{sp}[m] * Dr[m]$\\
+
+$0.1 [tonn/m^3] * 77[m] * 11.7{sp}[m] * 5.8[m] = 523[tonn]$\\
+
+\footnotesize
+Formel 16: Beregning av skrogvekt.
+ 
+  		
+  		\subsubsection{Maskinerivekt}
+  		Maskinerivekten $W_{ma}$ er vekten av hele maskinerianlegget. Vekten blir beregnet med utgangspunkt i $W_{mo}$ av hovedmotoren. For at skipet skal kunne opprettholde en fart på $14[knop]$ bruker vi en hurtiggående dieselmotor. Motoren får da en vekt på $15[kg/kW]$, girkassen får en vekt på $10[kg/kW]$ 
+
+$W_{sk} = K[tonn/m^3] * L_{oa}[m] * B_{sp}[m] * Dr[m]$\\
+
+$0.1 [tonn/m^3] * 77[m] * 11.7{sp}[m] * 5.8[m] = 523[tonn]$\\
+  		  
+  		\subsubsection{Utrustningsvekt}
+  		\subsubsection{Beregnet lettskipsvekt}
+  	\subsection{Deplasement}
+  	\subsection{Beregning av tyngdepunkt}
+  	\subsection{Estimat av tverrskips initialstabilitet}
+
+\section{Arrangementtegninger}
+Vår arrangementstegning er tegnet på et A3-ruteark i målestokk 1:200, og består av to typer tegninger: en profiltegning (oppriss) av skipets arrangement sett fra styrbord side, og en dekksplantegning av arrangementet til hoveddekket sett ovenfra. \\
+
+\textbf{Sett inn arrangementstegning} \\
+
+\section{Linjetegninger}
+Linjetegninger er også en av de viktigste tegningstypene som benyttes for å beskrive et skip. Den består av tre ulike plan-tegninger: profil/oppriss (skipet sett fra siden av), vannlinjeplan (skipet sett ovenfra) og spanteriss (skipet sett forfra og bakfra). Linjetegningen gir med andre ord en geometrisk beskrivelse av formen på skroget og hoveddimensjonene. Disse danner grunnlaget for volumberegninger av deplasement, lasterom, tanker og andre rom i skipet, samt beregning av volumsenter for disse. \\
+
+Akkurat som arrangementstegningen, er linjetegning også tegnet i målestokk 1:200 på et A3 ruteark, det vil si at hver rute ($0.5cm * 0,5 cm$) tilsvarer 1 kvadratmeter i virkeligheten. Linjetegningen gir oversikt over tilgjengelige volumer. For å kunne skissere en linjetegning trenger man en SAK, altså en Seksjons Areal Kurve. Målet er å danne en SAK som oppfyller funksjonskravene til skipet vårt. \\
+
+Vi begynte med å markere $Lpp=72.5m$, og avmerke spantene fra 0 (AP) til 10 (FP). Avstanden mellom spantene \(\frac{Lpp}{10}\)$=7.25m$ . Linjetegningen er tegnet i forholdet 1/200, i cm blir det da \(\frac{Lpp}{10}\)$*100\approx 3.6 cm$.  Deretter finner vi arealet av midtspantet. Med dette bruker vi formelen $Am= Bspt*(T-I)$, der $I$ er det lille arealet som forsvinner i hjørnene når vi tegner opp spanterisset. Dette gir oss: \\
+
+$Am=11.6m*4.6m - 2*$\(\frac{1}{2}\)$m=49.7m^2$ \\
+
+	\subsection{SAK-Kurv}
+Som en hjelp til å lage SAKen regner vi ut lengden av et rektangel med areal lik midtspantet, $49.7 m^2$, og et volum på $2850 m^2$, som er volumdeplasementet til skipet vårt (tidligere utregnet under hoveddimensjoner).  Lengden av rektangelet blir da: \\
+
+\(\frac{\text{Volumdeplasementet}}{\text{Arealet av midtspantet}}\)$=$\(\frac{\nabla}{Am}\)$=$\(\frac{2850m^3}{49.7m^2}\)$\approx 57.3m=28.65cm$ (i målestokk 1:200) \\
+
+Lengden av SAKen er da under $80\%$ av Lpp. \\
+
+LCG er tidligere beregnet til å ligge $0,76m\approx0,8m$ foran midtspantet. Vi tegner derfor inn rektangelet med tyngdepunkt $0,8m$ foran nullkrysset. Langs y-aksen har vi spantarealet i kvadratmeter ($m^2$) der en rute er $2.5 m^2$, mens langs x-aksen har vi spantene. Vi skal skissere en SAK som representerer halvparten av volumdeplasementet, derfor blir “høyden” \(\frac{Am}{2}\)$= 24.85 m^2$. Deretter deler vi endekantene til rektangelet i 2, og trekker en strek fra AP gjennom punktet til det treffer øverste streken i rektangelet. Det samme gjør vi fra FP. Vi setter av $1 - 2m^2$ bak AP som er den delen av akterspeilet som er neddykket. For å få en SAK som gir en god beskrivelse av seksjonsarealene over skipets lengde, skisserer vi inn en ny jevn kurve som som viser inn- og utløpsvinkler av vannlinjene i baug og akterskip. \\
+
+Når SAKen er inntegnet kan vi fortsette med å tegne inn spantene i spanterisset. Spanterisset er inntegnet i profil/opprisset ved nullkrysset til båten. Skipet er symmetrisk om senterlinjen langskips, derfor holder det at vi tegner inn spant $5-10$ på høyre side av senterlinjen, og spant $0-4$ på venstre side. \\
+
+	\subsection{Profil / Oppriss}
+Profilet/opprisset til båten tegnes inn på A3-arket med SAK kurven under. Vi tegner på kjøllinjen K, konstruksjonsvannlinjen KVL og skisserer omrisset av profilet slik vi gjorde på arrangementsskissen. Poop og bakk tegnes også inn, men vi dropper å tegne inn overbygninger og dekkshus. Under KVL tegner vi inn vannlinjer ved dypgangen 1 m og 3 m (VL 1 og VL3 på tegningen). Vi skisserte inn baugprofilen med en stigning på 60\degree. Det er her viktig å presisere at målene er veldig omtrentlige.\\
+
+ 	\subsection{Vannlinjeplan}
+Når profilet er tegnet inn, kan vi tegne inn spantene i spanterisset for å senere å få tegnet opp vannlinjene. Spantene tegnes inn i spanterisset ved hjelp av SAKen, og når de er på plass får vi målt og tegnet opp vannlinjene ved hjelp av avstanden fra senterlinjen til der spantene krysser VL 1 og VL 3 som vi tegnet inn. Vi skisserer også inn KVL som den ytterste vannlinjen i vannlinjeplanet. \\
+\section{Hydrostatiskeberegninger}
+Her beregnet vi forskjellige egenskaper til skipet angående hvordan det vil oppføre seg i vannet, kalt hydrostatikk. Utregninger er basert på linjetegningen av skipet. Merk også at beregningene er gjort teoretisk og ikke er medberegnet bølger og andre naturkrefter som kan påvirke skipet kraftig.
+	\subsection{Volumberegninger ved hjelp av SAK}
+Se vedlegg\\
+For å bestemme skrogets volumdeplasement på hver av vannlinjene (VL 1,0 meter over kjøl, VL 3,0 meter over kjøl og KVL 4,37 meter over kjøl) tegnet vi en SAK-kurve for hver av disse linjene. Vi tegnet opp et aksesystem på et nytt A3-ark. Langs x-aksen følger vi Lpp (fra AP til FP) i målestokk 1:200 (samme som linjetegningen), og er delt inn i spant 1-10. Y-aksen viser spanteareal i målestokk 1:500?? Følgelig tilsvarer hver rute på arket $1m*2,5m^2 = 2,5m^3$. Her er det viktig å holde tunga rett i munnen, da vi benytter to ulike målestokker langs akseretningene. Bruker vi disse konsekvent, er det ingen problem at de ikke er tegnet i samme forholdstall. \\
+
+For å tegne inn kurvene i aksesystemet, benytter vi oss av spanterisset på linjetegningen. Vi avleser spantearealene mellom kjølen og de respektive vannlinjene for hvert enkelt spant, hvilket krever høy konsentrasjon og presisjon. Ettersom spanterisset på tegningen kun viser den ene halvdelen av spanterisset, må vi huske å multiplisere antall ruter med 2 for å få hele spantets areal. Resultatet fra rutetellingen fører vi inn i en tabell på toppen av arket (i tabellen førte vi inn antall ruter før vi multipliserte med 2), og plotter verdiene inn i koordinatsystemet vårt. Hver rute i spanterisset tilsvarer $1m^2$. Ved å trekke en linje mellom punktene for hver vannlinje, får vi tre ulike SAK-kurver (se vedlegg x). SAKene for vannlinjene ble litt rare: de flatet svært fort ut på toppen. Dette har en sammenheng med at spantene på spanterisset gikk helt ut til full bredde rimelig raskt! Skipet vårt har full bredde over en lang periode (fordi hele lasterommet vårt skulle være rektangulært). SAK-kurvene for de tre vannlinjene likevel tegnet riktig ut ifra spanterisset på linjetegningen vår, siden vi har satt spant 3 – 8 ut til full bredde (altså samme areal som midtspantet).\\
+
+Vi lager en ny tabell, hvor vi fører inn deplasementsvolumet for hver av vannlinjene som vi får ved å multiplisere målestokken på $2,5m^3$ med antall talte ruter under hver SAK-kurve. Følgende resultat er vist i tabellen under:\\
+
+Sett inn tabell for SAK\\
+
+Ut ifra tabellen ser vi at volumdeplasementet under KVL, som er det samme som volumdeplasementet til hele skipet, ble på $2825 m^3$. I avsnitt XX beregnet vi volumdeplasementet til å være $2619 m^3$. Sammenligner vi de to resultatene, får vi en forskjell på ca. 7\% Dette viser at seksjonsarealkurven for KVL og spanterisset ikke stemmer helt overens. \textbf{Dette kan skyldes flere feilkilder i forbindelse med tegning av SAKene og rutetelling, men også feil i linjetegningene??? Vi kan også telle på SAK-en på linjetegningen, som viser KVL. Kanskje det stemmer mer?Denne viser kun halve spantearealet, så vi må multiplisere med 2.}
+
+		\subsubsection{Feilkilder ved rutetelling}
+        Legge inn feilkilder felles for hvert kapittel??
+	\subsection{Langskips plassering av oppdriftssenteret(LCB)}
+Ved å bruke SAK-kurvene vi fant for vannlinjene, kan vi nå beregne langskips plassering av oppdriftssenteret. Dette gjøres ved å balansere spantearealkurvene. Først printer vi en kopi av SAKene ut på et stivt ark, og klipper ut SAKen for KVL. Så balanserte vi kurven på en linjal, parallelt med spantene. Balansepunktet vi finner vil da tilsvare skipets volumsenter, som er det samme som oppdriftssenteret. Et balansepunkt aktenfor midtspantet (spant 5) gir negativ verdi, mens en plassering fremfor midtspantet gir positiv verdi. Deretter gjentok vi prosessen for henholdsvis SAK-kurven til VL 3,0 og VL1,0, og plottet resultatene inn i en ny tabell:\\
+
+Sett inn tabell\\
+
+\textbf{Printe ut på stive ark
+Balansere spantearealkurvene for å finne LCB. Først KVL så KVL3 så KVL1. Avmerker midtspantet (spant5)
+Tabell med resultater. Kommentar: SAK for vannlinjene ble litt rart, siden spantene på spanterisset gikk helt ut til full bredde rimelig raskt! I tillegg litt vanskelig når vi skulle måle LCB over linjal, arket var ikke stivt nok så vi måtte brette det i to.}
+
+   
+ 	\subsection{Langskips plassering av flotasjonssenteret (LCF)}
+Fra hydrostatikken vet vi at alle skip trimmer om flotasjonssenteret sitt. I skip er et flotasjonssenter det samme som arealsenteret til en vannlinje på skipet. Hva dette punktet betyr for oss er at det er hvor vannlinjen til skipet før trim krysser vannlinjen til skipet etter trim. \textbf{I praksis betyr dette at et flotasjonssenter som ligger i nullkrysset til skipet vil gjøre at skipet ikke trimmer i fullastet tilstand, noe som ofte er ønskelig. (KORREKT??).} Flotasjonssenteret er med andre ord helt sentralt for å beregne trim på skipets forskjellige vannlinjer. Konstruksjonsvanlinjen er beregnet etter skipets fullastede tilstand , så vi trenger naturligvis å vite arealsenteret her. Men vi må også vite om skipets trim i andre lasttilstander, og derfor regner vi på vannlinjene 1 og 3. For å finne flotasjonssenteret til disse arealene klippet vi ut vannlinjene fra linjetegningen på et stivt ark og balanserte hver av dem på en skarp linjal for å finne balansepunktet. Vi har definert akterut for nullkrysset for negativ retning og forut for positiv retning. \\
+
+\begin{table}[htbp]
+	\centering
+    \caption{Flotasjonssenter}
+    \label{tab:tableLCB}
+    \hskip-3.0cm
+    \begin{tabular}{l|l} 
+      \hline
+      \textbf{Vannlinje} &  \textbf{LCF[m]} \\ \hline
+      KVL & $-1,6m$ \\ \hline
+      VL3 & $-0,4m$ \\ \hline
+      VL1 & $+1,9m$ \\ \hline
+    \end{tabular}
+\end{table}
+
+
+Som man kan se er flotasjonssenteret vårt knepent akterut for nullkrysset, men det er noe som senere kan reguleres. 
+
+  	\subsection{Vertikalt volumsenter (KB)}
+Volumsenteret B er definert som avstanden fra kjølen (K) og opp til B, heretter kalt KB. Som flere beregninger i prosjektet fant vi dette ved hjelp av klipping, balansering og telling av ruter. I dette tilfellet måtte vi starte med å lage en vannlinjearealkurve (VAK). Det gjorde vi ved å telle rutene under hver vannlinje på linjetegningen, for deretter å plotte dem inn mot dypgangen i en graf. Spesielt viktig i denne prosessen er det å huske på å doble antall ruter som telles, siden vi kun teller vannlinjen til halve skipet på linjetegningen. Siden forholdet mellom ruter og meter i virkeligheten var 1 til 1 ble vannlinjearealet det samme som antall ruter. Se tabellen under.
+
+\begin{table}[htbp]
+	\centering
+    \caption{Vannlinjeareal}
+    \label{tab:tableVAK}
+    \hskip-3.0cm
+    \begin{tabular}{l|l|l} 
+      \hline
+      \textbf{Vannlinje} &  \textbf{Antall ruter[$1m*1m$]} & \textbf{Vannlinjareal[$m^2$]} \\ \hline
+      KVL & 776 & 776 \\ \hline
+      VL3 & 720 & 720 \\ \hline
+      VL1 & 625 & 625 \\ \hline
+    \end{tabular}
+\end{table}
+
+Grafen vi plottet disse tallene i ble tegnet med ruter i forholdet $0,25mx25m^2$, der dypgangen var x-aksen og vannlinjearealet var y-aksen. Ut i fra denne grafen kunne vi telle oss frem til et volumdeplasement ved å telle antall ruter til venstre for en vannlinje og deretter multiplisere med volumet for en rute $6,25m^3$. \\
+
+\begin{table}[htbp]
+	\centering
+    \caption{Volumdeplasement}
+    \label{tab:tableVDP}
+    \hskip-3.0cm
+    \begin{tabular}{l|l|l} 
+      \hline
+      \textbf{Vannlinje} &  \textbf{Antall ruter[$0,25m*25m^2$]} & \textbf{Volumdeplasement[$m^3$]} \\ \hline
+      KVL & 468 & 2925 \\ \hline
+      VL3 & 304 & 1900\\ \hline
+      VL1 & 88 & 550 \\ \hline
+    \end{tabular}
+\end{table}
+
+Dette ga oss et avvik på $2925-2619=306$, noe som er betydelig. Differansen ble stor fordi tallene som ble brukt til å tegne linjetegning var annerledes fra de faktiske tallene som stemte for skipet. Konsekvensen av uoverensstemmelsen ble at samtlige hydrostatiske beregninger til en viss grad ble upresise. Det som ble endret på tegningen/skipet var...............???\\
+
+Etter vi hadde beregnet ut volumdeplasementet gjennomførte vi kjent drill ved å klippe ut VAK-kurven fra et stivt papir og balansere den på en skarp linjal, for så å klippe av de ytterste vannlinje og gjenta prosessen. Dette ga oss arealsenteret for kurven, som tilsvarer vertikalt volumsenter (KB) for de forskjellige vannlinjene. Det er rom for feil her på grunn av at balanseringen her var utfordrende takket være den merkelige formen på VAK-en. \\
+
+\begin{table}[htbp]
+	\centering
+    \caption{KB}
+    \label{tab:tableLCB}
+    \hskip-3.0cm
+    \begin{tabular}{l|l} 
+      \hline
+      \textbf{Vannlinje} &  \textbf{KB[m]} \\ \hline
+      KVL & 2,35 \\ \hline
+      VL3 & 1,30 \\ \hline
+      VL1 & 0,60 \\ \hline
+    \end{tabular}
+\end{table}
+
+  	\subsection{Beregning av metaplassering (KM)}
+  	\subsection{Kurveblad}
+  	\subsection{Bonjean-kurver}
+  	\subsection{Tverrskips initialstabilitet}
+  	
+\section{Ballast}
+	\subsection{Beregning av deplasement i ballasttilstand}
+	\subsection{Langskips oppdriftssenter (LCB) i ballasttilstand}
+	\subsection{Beregning av tyngdepunkt i ballasttilstand}
+	\subsection{Beregning av tverrskips initialstabilitet i ballasttilstand}
+	
+\section{Motstandsprediksjon}
+	\subsection{Våt overflate (S)}
+		\subsubsection{Våt overflate ved hjelp av delfship}
+	\subsection{Restmotstand}
+	\subsection{Friksjonsmotstand}
+	\subsection{Korreksjoner}
+		\subsubsection{Korreksjon for skalaeffekter og ruhet}
+		\subsubsection{ Korreksjon for bredde/dypgangsforholdet}
+	\subsection{Total motstand}
+	
+	
+\section{Propulsjonsberegninger}
+
+\underline {Beregning av nødvendig motoreffekt:}
+
+Nå som vi har beregnet totalmotstanden, kan vi gjøre bedre beregninger av motoreffekten som trengs for at skipet skal holde en ønsket hastighet på $10 $ [knop]. 
+
+Først finner vi slepeeffekten SkW, som er nødvendig motoreffekt for å slepe skipet med en konstant hastighet:
+
+\begin{equation}
+SkW = RT * V
+\end{equation}
+Formel 39: Slepeeffekten
+
+Ved beregning av slepeeffekt, må man legge til et servicetillegg på $25-30\%$ i Nord-Atlanteren som skal ta hensyn til økt motstand på grunn av vind, bølger og strøm som skipet kan møte på overfarten. Ettersom vi allerede har inkludert en sjømargin på $15\%$ i logistikkfasen, må dette trekkes fra servicetillegget. Totalt servicetillegg blir da på $15\%$. 
+
+Når kraften overføres fra motor til propell, vil uungåelig noe av denne energien gå tapt i form av varme under friksjon. Vi antar en foreløpig totalvirkningsgrad ${\eta}_T = 0,5$ for første iterasjon, hvilket er relativt pessimistisk. 
+
+Vi finner nå nødvendig bremseeffekt for motoren $BkW$, som er motoreffekten vi må ha med hensyn på faktorene nevnt ovenfor: 
+
+\begin{equation}
+BkW=\frac{SkW}{{\eta}_T}
+\end{equation}
+
+
+Tabellen under viser alle utregningene for beregning av nødvendig bremseeffekt/motoreffekt for vårt prosjekterte skip:
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{|l|r|r|r|}
+\toprule
+$Hastighet[knop]$ & $9$ & $10$ & $11$\\
+\midrule
+$Hastighet[m/s]$ & $4,63$ & $5,14$ & $5,66$ \\
+\midrule
+$Totalmoststand R_T [kN]$ & $42,93$ & $53,42$ & $67,24$ \\
+\midrule
+$Slepeeffekt SkW [kW]$ & $198,75$ & $274,77$ & $380,46$ \\
+\midrule
+$SkW inklusivt (30\% servicetillegg-15\% sjømargin)[kW]$ & $228,56$ & $315,99$ & $437,52$ \\
+\midrule
+$BkW = SkW/0,5[kW]$ & $457,12$ & $631,97$ & $875,05$ \\
+\midrule
+$BHK[hk]$ & $613,00$ & $847,50$ & $1173,46$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\underline{Propellvalg:}
+ 
+Det er selvsagt et krav om at propellen vi velger må få plass i akterskipet med nødvendige klaringer. Det er viktig å ta hensyn til propellklaringer, dvs. avstandene mellom propellen og skroget. Vi følger DNV GL (Det Norske Veritas Germanischer Lloyd) sine krav til propellklaringer som skal brukes tidlig i designfasen av skip(se kompendiet side $11.33$). Ved hjelp av denne figuren kan vi beregne maksimal diameter $D_{max}$. 
+
+Ved å studere profiltegningen på linjetegningen, måler vi  avstanden bak (hekken?) til $1,8$ cm, hvilket tilsvarer $3,6$ meter i virkeligheten. Ut av tegningen i kompendiet får vi dermed likningen:
+
+\begin{equation}
+D +0,05*D + 0,20*D = 3,6 [m] \Rightarrow D_{max} = \frac{3,6[m]}{1,25[m]} = 2,88 [m] 
+\end{equation}
+
+
+Beregning av propulsjon er en iterasjonsprosess, hvor vi må gjøre de samme beregningene om og om igjen for å komme frem til et passende resultat. Nødvendig med en del antakelser. Vi ønsker å finne en propelldiameter D som er tilnærmet lik $D_{max}$. 
+
+Første iterasjon
+
+Vi benytter oss av fremgangsmåten i appendix ?? for utregning av optimal propelldiameter. 
+
+Ut i fra tabellen over ser vi at slepeeffekten inkludert servicetillegget $P_e \approx 316$
+Vi anslår propulsjonsvirkningsgraden $\eta_D = 0,5$ for første iterasjon. 
+
+\begin{equation}
+Beregnet motoreffekt P_D = \frac{P_e}{\eta_D} = \frac{316}{0,5}= 632 [kW]
+\end{equation}
+
+
+Ved å studere vannlinje $3 (VL 3,0)$ på linjetegningen, ser vi at skroget er relativt fyldig i hekken, og setter en thrustreduksjon $t = 0,2$. Egentlig ønskelig at t skal være så lav som mulig for å få så lite wake (medstrøm) som mulig?
+
+Videre er vi nødt til å gjøre en del antakelser, og anslår den relative rotasjonsvirkningsgraden $\eta_R = 1$ og propellturtallet $\eta = 3 [o/s]$. Ettersom det er en ganske saktegående motor, er $\eta$ også tilnærmet lik motorens turtall. 
+
+Blokkoeffisienten $C_B$ ligger på ca. $0,73$, hvilket betyr at vi har et relativt slankt skip, og vi setter derfor en foreløpig medstrømskoeffisient $w = 0,2$. Vannhastigheten $V_A$ inn mot propellen ved en hastighet på $10 knop (5,144m/s)$ kan beregnes på følgende måte:
+
+\begin{equation}
+w = \frac{V_s-V_a}{V_s}\Rightarrow V_A = V_s - w*V_s = 5,144 - 0,2*5,144 = 4,1152 [m/s] = 8 [kn]
+\end{equation}
+
+
+Vi beregner Bp-verdien gitt ved følgende formel: 
+\begin{equation}
+Bp = (\frac{1}{2*\pi*\rho})**0,25 * P_D** 0,25 * \frac{\eta**0,5}{V_A**1,25} 
+\end{equation}
+
+$\rho$ = Tettheten til fluiden propellen virker i $= 1025 [kg/m**3]$
+$\eta$ = Propellens turtall $= 3$
+$V_A$ = Vannhastigheten inn på propellen $= 4,12 [m/s]$
+ 
+Ved å sette inn i verdiene i formelen, får vi ut en Bp-verdi på $0,93$. 
+
+Bladarealsforholdet $A_e/A_o$ har egentlig med kavitasjon å gjøre, og blir derfor vanskelig å regne ut. Vi kan likevel gjøre et anslag. For at propellen skal få best mulig virkningsgrad, er det ønskelig med få blader med stor diameter, og et lavt $A_e/A_o$-forhold. Men en veldig god propell vil imidlertid gi mer kavitasjon (lite ønskelig). Vi velger en mellomting, og optimerer med $4$ blader. Dermed leser vi av B-$\Delta$ diagrammet bak i kompendiet (appendix, side $3$) for $4$ blader med et bladarealsforhold $A_e/A_o = 0,55$, og finner $\Delta= 2,05$ 
+
+\begin{equation}
+Propelldiameteren D = \frac{{\Delta}*V_A}{\eta} = \frac{2,05*3}{3}= 2,81 [m]
+\approx D_{max} = 2,88[m] 
+\end{equation}
+
+
+Vi ser at propelldiameteren vi fikk ut ved første iterering bare er litt kortere enn $D_{max}$, og velger derfor å gå videre med denne verdien. Dermed slipper vi å gjennomføre flere iterasjoner. 
+
+Tabellen under viser en oppsummering av beregnede verdier for propell og motor
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{|l|r|}
+\toprule
+$P_e inkl. servicetillegg[kW]$ & $315,99$\\
+\midrule
+$\eta_D$ & $0,5$\\
+\midrule
+$P_D [kW]$ & $631,97$\\
+\midrule
+$w$ & $0,2$\\
+\midrule
+$t$ & $0,2$ \\
+\midrule
+$\eta_R$ & $1$  \\
+\midrule
+$Propellturtall[o/s]$ & $3$\\
+\midrule
+$Bladarealsforhold A_e/A_o$ & $0,55$\\
+\midrule
+$Bp$ & $0,93$\\
+\midrule
+$V_A$ & $4,12$\\
+\midrule
+$\Delta$ & $2,05$\\
+\midrule
+$Diameter[m]$ & $2,81$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Miljøhensyn}
+Det er hensiktsmessig å tenke på miljøhensynet innen skipsdesign. Dette er oppdelt i to deler. Den førstnevnte er avgasseutslippet, de aller fleste skip er bygget og bygges i dag bruker typisk marinediesel motorer. Disse avgassene kommer fra forbrenningen av fossilt brensel. Det andre miljøhensynet som tas stilling til er vibrasjoner og støy. Dette er noe uvant bruk av ordet, men går på forstyrrende og ubehaglige elementer som kommer fra å være ombord på skipet. Avgassutlipp innen den maritime industrien er strengt regulert av FN-organet IMO ("International Maritime Organization"). Organet setter utslippsbegresninger på nye skip ved maksimalt utslipp per kWh. MARPOL, "The International Convention for the Prevention of Pollution from Ships" er et sett lover og regler som er satt blitt satt av "The International Maritime Organization" for å sikre at forurensning fra den maritime industrien er minimert. 
+
+Miljøforurensning innen den maritime industrien er definert som \"Alle substanser som kan være til trussel mot menneskelig helse. Substanser som kan forstyrre eller forårsake ødeleggelse av økosystemet i havet."\
+
+De mest typiske formene for maritim forurensning som blir omtalt i denne rapporten er:
+
+\begin{itemize}
+\item Eksosgasser. Dette er $CO_2$ (Karbondioksid) , $SO_2$ (Svoveldioksid), $NO_x$ (Nitroksider) 
+\item Kloak 
+\item Avfall 
+\item Ballast-vann
+\item Bunnstoffer fra skroget
+\end{itemize}
+
+	\subsection{Ballast-vann}
+Skipene som denne rapporten omhandler seiler mellom Torshavn og Trondheim. På tilbaketuren er skipene uten en nyttelast. Dette er ikke gunstig da dette vil gå utover sjøegenskapene. For at det skal kunne forsette å ha tilfredsstillende sjøegenskaper må skipet lastes. Denne lasten er som regel i form av sjøvann og omtales som ballast. Når skipet er lastet med ballastvann sier vi at det befinner seg i en ballasttilstand. Miljøhensynet som må tas stilling til når det blir brukt ballastvann, er overføringen av mikroorganismer mellom farvann som forekommer ved at ballastvannet kommer fra sjøen.
+Vi anser som at ballastvann kommer ikke til å by på noe problemer for oss, da distansen mellom Torshavn og Trondheim er kort, og de respektive økosystemene vil være svært like.
+
+ 
+	\subsection{Kloak}
+Anslagene som er blitt er å ha et mannskap på seks på hver av båtene. Dette vil produsere lite kloakk om vi sammenligner dette med eksempelvis et passasjerskip eller cruiseskip. I tillegg IV, MARPOL 73/78, er det satte retningslinjer for hvordan kloakkutslipp skal foregå. Kloakk skal ikke slippes ut for hastigheter lavere enn 4 knop, og skipet skal være på vei mellom bestemte destinasjoner for at utslippet skal være kvalifisert som lovlig. Alle utslipp skal være et minimum på 12 nautiske mil fra land dersom skipet ikke har et desinfiseringsanlegg. SE VEDLEGG XXX IMO (www.imo.org) 
+ 	\subsection{Forurensning fra bunnstoffer på skrog}
+Den våte overflaten av skroget vil være utsatt for at både dyr og planter fester seg, og føre til en større ruhet på skroget. Dette vil si at skipet vil få en økt friksjon og motstand ved at det ikke lengre har en glatt overflate. Dette vil mest sannsynlig igjen føre til et økt drivstoff forbruk. Dette er jo svært ugunstig med tanke på økonomi og miljø.
+
+TBT har hovedsakelig blitt brukt som bunnstoff på skip og treimpregnerinsmidler for å hindre begroing og råte. Dette ble hyppig brukt på skip frem til 2003 i Norge, da det ble forbudt da det ble påvist at det var giftig for marint dyreliv .
+
+	\subsection{Beregning av mengden avgasser}
+
+\underline{Energibehov for et skip per år ved seiling:}\\
+$100 $[timer/tur]$ * 632$[kW]$ * 50$[tur/år]$ = 3160000$[kWh/år]
+\\\\
+\underline{Drivstoffsforbruk for et skip per år ved seiling:}\\
+$170 [g/kWh] * 3160000$ [kWh/år]$ = 537,2$ [tonn/år]
+
+
+Vi velger å bruke MDO $0,1\%$, Marin Diesel Oil, fremfor rimeligere alternativ slik som tung-olje og LSFO. Dette er på bakgrunn av at IMO innfører nye svovelkrav i 2020. Alle skip må fra da av gå med drivstoff som har maks $0,5\%$ innhold av svovel$^2$. De rimeligere alternativene vil ikke oppfylle disse kravene uten å ha innført svovel reduserende tiltak. I og med skipene som prosjekteres her skal ha en levetid på 20 år.
+    
+	\subsection{Karbondioksid-utslipp}
+Karbondioksid er i utgangspunktet en naturgass. Planter eksempelvis bruker gassen i fotosyntesen hvor den blir omdannet til oksygen. Det som har gjort vi i nyere tider har sett på økt $CO_2$ utslipp som miljøforurensning, er at forskning så langt har avklart at det er en sammenheng med økt konsentrasjon av $CO_2$ i atmosfæren fører til en økt global temperatur,også kjent som drivhuseffekt. Dette vil videre føre til forstyrrelser i natur og miljø når temperaturen øker raskere enn dyr og planter kan tilpasse seg endringen. 
+
+Det ble gjort et overslag for å finne ut hvor stort $CO_2$ utslipp vil hver av de prosjekterte skipene ha. Det ble estimert at en rund-tur mellom Torshavn og Trondheim ville ta omlag 100 timer, dette inkluderer en sjømargin på 15%. 
+
+For å beregne hvor mye $CO_2$ utslipp et skip kommer til å ha, gjør vi et oppslag i det periodiske system for å finne atommasse og karboninnhold. Karboninnholdet i marindiesel utgjør $86,3\% $ av brennstoffets totale vekten. Karbon [C] har en atomvekt på $12 [g/mol]$. Oksygen [O] har en atomvekt på $16 [g/mol]$. $CO_2$ har en samlet vekt på $44 [g/mol]$. $CO_2$ består av 1 del C og $\frac{2*16}{12} = 2,67$ deler O .Vi antar at alt karbonet i brennstoffet  forbrennes og omdannes til $CO_2$.
+\\\\
+$CO_2 = 0,863 [kg] * (1+2,67) = 3,1672 [kg]$
+\\\\
+Fra ligningen over ser vi at for $1 [kg]$ med brennstoff får vi $3,1672[kg]$   $CO_2$
+\\
+Mengde $CO_2$ som blir produsert for et av skipene per år blir da.
+\\\\
+$CO_2 = 537,2$ [tonn/år]$ * 3,1672  = 1701,42$ [tonn/år]
+
+	\subsection{$NO_x$-utslipp}	
+Ved avlesning i MARPOL sitt tillegg VI, side C-20 i kompendiet$^1$.
+\\\\
+\underline{Utslippene vi kan forvente av $NO_x$ ved vårt valg av motor:}
+\\
+$45(n^{(-0,2)})$ [g/kWh]
+\\\\
+Dersom vi har en motoreffekt på større enn 130 [kW] og et turtall på høyere enn $130$ [o/min], men mindre enn $2000$ [o/min].
+Våre skip vil ha en motoreffekt på omlag $632$ [kW] og turtall på $180$ [o/min].
+\\\\
+$45(180^{-0,2})= 15,93$ [g/kWh] 
+\\\\
+\underline{Totalt uslipp med $NO_x$ hvert år:}
+\\
+$15,93$ [g/kWh]$ * 3160000$ [kWh/år]$ = 50338800$ [g/år] $ = 50,34$ [tonn/år]
+\\\\
+Forskriftene som beregningene er tatt utgangspunktet i, er for alle eksisterende dieselmotorer innen den maritime industrien fra 01.01.2000. Se side C-20 i kompendiet$^1$
+
+	\subsection{$SO_2$-utslipp}
+Estimerer at $0,1\%$ av drivstoffets vekt er svovel. Svovel [S] har en atomvekt på $32,1$ [g/mol] og oksygen $16$ [g/mol]. $SO_2$ har da en vekt på $32,1 + (16 * 2) = 64,1$ [g/mol].
+\\\\
+$SO_2$ består av 1 del S, og $\frac{2*16}{32,1} = 0,9969$ deler O
+\\\\
+Dette vil da gi et utslipp på $0,001[kg] * (1+0,9969) = 0,0019[kg]$ $SO_2$ per [kg] brennstoff.\\
+\underline{Mengde $SO_2$ blir:}
+\\
+$SO_2 = 0,0019 * 606,72 = 1,21$ [tonn/år]
+\\\\
+
+
+	\subsection{Oppsummering av avgassutslipp}
+For å kunne finne utslipp gitt i [g/kWh], bruker formelen som er gjengitt under.
+
+\begin{equation}
+\frac{\frac{tonn}{\textit{år}}*10^6}{\frac{kWh}{\textit{år}}} = \frac{g}{kWh}
+\end{equation}
+
+$CO_2$:
+\begin{equation}
+\frac{1701,42 \textit{[tonn/år]} * 10^6}{3160000 \textit{[kWh/år]}}= 538,42 \textit{[g/kWh]}
+\end{equation}
+
+$SO_2$:
+\begin{equation}
+\frac{1,21 \textit{[tonn/år]} * 10^6}{3160000 \textit{[kWh/år]}}= 0,38 \textit{[g/kWh]}
+\end{equation}
+\\\\
+Det totale utslippet blir dermed:
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|c|c}
+\toprule
+\textbf{$Avgass$} & $\textit{[tonn/år]}$ & $[g/kWh]$ \\
+\midrule
+$CO_2$ & $1701,42$ & $538,42$ \\
+$SO_2$ & $1,21$ & $0,38$ \\
+$NO_x$ & $50,34$ & $15,93$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Økonomi}
+	\subsection{Livssykluskostnaden (LCO)}
+	\subsection{Byggekostnader}
+	\subsection{Drifts- og vedlikeholdskostnader}		
+	\subsection{Beregning av LCC}
+	\subsection{Nødvendig fraktrate (RFR)}		
+	\subsection{Beregning av LCC}
+	\subsection{Beregning av LCC}
+  	
+\section{Resultater}
+
+
+
+\textbf{Sett inn tabell 11.1}\\
+
+\textit{Funksjonskrav}\\
+
+\textbf{Sett inn tabell 11.2}\\
+
+Frekvenser/leveranser:\\
+
+To båter med syv leveranser i måneden, én båt med 4 leveranser, den andre med 3. Vi fant ut at dette var den smarteste løsningen, da to båter gjør at de kan seile med en lavere hastighet og med mindre last per skip, som gjør skipene både billigere å bygge og mer miljøvennlige. Vi vurderte også å ta tre båter, men det koster mindre penger å gjøre de båtene vi allerede har litt større enn å lage en helt ny. I tillegg er besetning en utgift vi sparer penger på ved å velge to båter i stedet for tre. 
+
+Dette gjør at båtene kjører med en hastighet på 11.9 knop, frakter 1942 tonn maling per leveranse, og får fraktet 170 000 tonn maling per år.  Båtene seiler til sammen 293 timer per måned, der en sjømargin på 15\% er medregnet i tiden. Vi regner med at båtene bruker 39 timer hver på lasting og lossing. \\
+
+\textbf{Sett inn tabell 11.3} \\
+
+\textit{Hoveddimensjoner}\\
+
+\textbf{Sett inn tabell 11.4}\\
+
+Hoveddimensjonene ble utformet med fokus på tid og nyttelast(payload), og derfor litt tilfeldige. Vi fokuserte f.eks ikke på å ha lengst mulig båt, eller størst bredde.\\ 
+
+
+Til å begynne med så vi på to forskjellige metoder å frakte lasten for dette oppdraget. De to metodene vi så på som mest aktuelle var enten “Container”- eller “Palle”-transportskip. Vi vil utdype dette valget senere i dette avsnittet.\\
+
+Et typisk palleskip er arrangert slik at det har flere dekk. Disse dekkene har standard høyde som varierer fra $2m - 2,2m$. Under frakt så står lasten normalt på pallen. Ved lossing eller lasting så er det normalt for slike skip å ha sideporter eller luker/heiser på dekk for å gjøre det enkelt å få tilgang til lasten. Løfteutstyret som brukes for palle-transportskip er som regel i form av enten gaffeltrucker eller kraner, kranene kan enten være på montert båten eller være på land. Gaffeltrucker kan brukes ombord i skipet i tillegg til å kunne brukes på land. Dette er praktisk for å plassere og jevnt fordele lasten på dekkene i skroget. Det som kan by på vanskeligheter ved bruk av gaffeltruck er at det kan være vanskelig å kjøre på og av båten. Ettersom tidevannet varierer vil også høyden av båten i havn variere i forhold til kaia, i tillegg til bølger. Dette kan føre til overgangen fra skip til land som trucken bruker kan bli for bratt om ikke dette er tatt til beregning. Ved å bruke kran i stedenfor så må det være noe logistikk fra lasterommet til en av lukene, for at kranen skal kunne losse/laste pallene.\\
+
+En annen løsning vi så på var å bruke et “Container”-transportskips design. Det som er med container-transportskip er at de bruker containere av en standard størrelse. Ved å bruke bokser av standard størrelse som alle kan forholde seg til gjør at ellers komplisert logistikk blir veldig mye enklere. Containere som er på skip kan også overføres og transporteres av flere andre typer transport, f.eks. tog eller lastebiler. Denne løsningen fører til redusert liggetid inntil kai i tillegg til at laste og losse-utgiftene er lavere sammenlignet med andre løsninger. Containere i motsetning til paller er svært dyre. \\
+
+For skipene som denne rapporten omhandler så er det frakt av malingsspann som skal selges videre etter frakt. Container-transportskip har en gjennomsnittlig marsjfart på 25 knop. Skipene som er tiltenkt å transportere malingen vil være i underkant halvparten så raskt. Den budsjetterte tiden som er satt for denne prosjekteringen anser vi som ikke like tidskritisk slik som containerskip er i definisjonen. Tanken bak designet containerskip er at det skal være en dør-dør transport med liten laste-/lossetid, som forenkler ellers vanskelig logistikk. I tillegg ser vi potensiale til å spare en del på drivstoff ved å ha lav marsjfart, de fleste containerskip til sammenligning har svært høy fart. Selve løsningen å bruke paller vil være mye billigere enn å bruke containere. \\
+
+Vi anser at den beste løsning for dette oppdraget vil være å bruke paller. Vi tror dette vil lønne seg sett økonomisk.  \\  
+
+Lastekapasitet og dekksareal:
+\begin{itemize}
+\item Vekt pr pall: $800 (kg) = 0,8 (tonn)$
+\item Dimensjoner på pall med last: $1,2 (m) * 0,8 (m)$ grunnflate, $1 (m)$ høyde
+\item Pallens høyde uten last: $0,15 (m)$
+\item Pallene stables 2 i høyden. Ved stabling av flere enn dette er vi redde for at plastbøttene malingen leveres i kan bli ødelagte. Stabel høyden blir da $2 (m)$
+\item Pallene lastes ombord ved hjelp av kranene som er tilgjengelig på land.
+\item Pallene kan flyttes ved hjelp av gaffeltruck
+\end{itemize}
+
+\textbf{Sett inn tabell 11.5} \\
+
+Laste/losse løsninger:\\
+Kran med \textbf{paller/konteinere/tank???}. Laster 50 tonn per time i Trondheim og 100 tonn per time i Thorshavn. Som gir en losse/lastetid på 75 timer i snitt.
+
+ \textbf{Sett inn tabell 11.6}\\
+ 
+\section{Konklusjon}
+
+For å gjengi problemstillingen vår: \\
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+\textit{“Hvilke dimensjoner, koeffisienter og andre forhold vil gi den mest økonomiske løsningen? Vil det lønne seg å ha færre overfarter i måneden, dvs. tyngre laster og større båter, eller bør vi øke frekvensen, noe som gir mindre last og lettere båter?”}    }%
+}\\
+
+Vi ønsket å tilby den mest lønnsomme løsningen for dette oppdraget. Dette har alltid vært i hovedfokus når vi har tatt avgjørelser innen logistikk, skipsdesign og ellers i prosjekteringen.\\
+
+Et eksempel er at det ble gjort en endring i leveringsfrekvensen for å oppnå en lavere blokk-koeffisient, dette for å få en bedre form på skroget og dermed en båt som glir bedre gjennom vannet. Dessverre så er det ikke blitt gjort noen beregninger rundt om dette faktisk ga noe utslag på økonomien. \\
+
+Valget som lå bak for å ta i bruk en palle-løsning på det prosjekterte skipet, fremfor å ta i bruk en containerløsning. Vi anser palle løsningen som det billigste alternativet, men det mangler også her å gjøre nøyaktige beregninger på pris på palle løsningen opp mot å ta i bruk containere istedenfor. Det kan være at det er en billigere løsning å bruke containere med reduserte losse- og lastetider enn å ha mannskap jobbe over en lengre tidsperiode. Dette er noe vi tenker å se nærmere på i senere arbeid.\\
+
+Fra resultatene kan vi trekke frem den beregnede verdien for nødvendige dekksareal, som skipet må kunne ha for å levere nyttelasten sin til avtalt tid. se tabell 11.5. Det nødvendige dekksarealet som vi trengte ble større enn dekksarealet vi hadde tilgjengelig. Vi kan konkludere fra dette punktet at det prosjekterte skipet som er designet i denne rapporten er uegnet for å løse dette oppdraget siden den kan ikke levere nyttelasten sin til avtalt tid.\\
+
+Det ble aldri gjort noen beregninger rundt oppdriftssenteret til skipet, noe som er beklagelig ettersom det etter hvert er svært viktig å vite. Oppdriftssenteret kan fortelle oss om skipet vil kunne ligge stabilt i vannet, eller om det kan være risiko for at den kan kantre. Dette må ses i samsvar med skipets samlede tyngdepunkt som skal være lavere enn oppdriftssenteret. \\
+
+Arbeidsfordelingen vår var noe rotete. Vi tenkte at det kunne være en grei strategi at alle jobbet fritt med prosjektet uten at medlemmene ble fordelt spesifikke oppgaver. Dette endte med at mange jobbet på de samme tingene og andre satt og ikke visste hvor de skulle starte å jobbe. Det var med andre ord en lite effektiv strategi.\\
+
+\section{Referanser og bibliografi}
+
+1. Marin Teknikk Grunnlag Pensumhefte
+
+2. www.sdir.no/aktuelt/nyheter/nye-svovelkrav-fra-imo/
+
+3. epall.no / europaller
+
+4. http://www.marin.ntnu.no/havromsteknologi/Bok/Kapittel\%209.pdf
+
+5. Seaweb.com
+
+6. https://maritime.ihs.com/
+
+
+\section{Vedlegg}
+
+Appendiks:\\
+
+For å finne admiralitets koeffisienten fant vi 5 sammenligningsskip, som var tilnærmet lik vårt. Dette gjorde vi på https://maritime.ihs.com/: \\
+
+\textbf{Sett inn tabell om sammenligningsskip}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
